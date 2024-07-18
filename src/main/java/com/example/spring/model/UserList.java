@@ -24,7 +24,11 @@ public class UserList {
 	{
 		user[] users = new user[5];
 		
-		
+		users[0] = new user(1, "ela", "SDE");
+		users[1] = new user(2, "regu", "ASD");
+		users[2] = new user(3, "jinsa", "GM");
+		users[3] = new user(4, "eqape", "INS");
+		users[4] = new user(5, "pujiw", "CO");
 		
 		return "Working";
 	}
