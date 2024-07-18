@@ -1,5 +1,8 @@
 package com.example.spring.model;
 
+import java.util.List;
+import java.util.ArrayList;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,22 +17,34 @@ class user {
 		this.name = name;
 		this.designation = designation;
 	}
+	
+	public String getName() {
+        return name;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public int getId() {
+        return id;
+    }
 }
 
 @RestController
 public class UserList {
 	@GetMapping("/users")
 	
-	public String fn()
+	public List<user> fn()
 	{
-		user[] users = new user[5];
+		List<user> users = new ArrayList<>();
 		
-		users[0] = new user(1, "ela", "SDE");
-		users[1] = new user(2, "regu", "ASD");
-		users[2] = new user(3, "jinsa", "GM");
-		users[3] = new user(4, "eqape", "INS");
-		users[4] = new user(5, "pujiw", "CO");
+		users.add(new user(1, "ela", "SDE"));
+		users.add(new user(2, "regu", "ASD"));
+		users.add(new user(3, "jinsa", "GM"));
+		users.add(new user(4, "eqape", "INS"));
+		users.add(new user(5, "pujiw", "CO"));
 		
-		return "Working";
+		return users;
 	}
 }
